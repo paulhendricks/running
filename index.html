@@ -11,7 +11,16 @@
 <div id="cal-heatmap"></div>
 <script type="text/javascript">
     var cal = new CalHeatMap();
-    cal.init({});
+    cal.init({
+        itemSelector: "#cal-heatmap",
+        domain: "year",
+        subDomain: "day",
+        data: "http://cal-heatmap.com/datas-years.json",
+        start: new Date(2000, 0),
+        cellSize: 10,
+        range: 1,
+        legend: [20, 40, 60, 80]
+    });
 </script>
 </body>
 </html>
