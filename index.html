@@ -36,11 +36,13 @@
             });
 
 </script>
-<div id="cal-heatmap"></div>
+
+<h1> Distance </h1>
+<div id="distance-heatmap"></div>
 <script type="text/javascript">
     var cal = new CalHeatMap();
     cal.init({
-        itemSelector: "#cal-heatmap",
+        itemSelector: "#distance-heatmap",
         domain: "year",
         subDomain: "day",
         data: "http://cal-heatmap.com/datas-years.json",
@@ -50,5 +52,54 @@
         legend: [20, 40, 60, 80]
     });
 </script>
+
+<h1> Time </h1>
+<div id="time-heatmap"></div>
+<script type="text/javascript">
+    var cal = new CalHeatMap();
+    cal.init({
+        itemSelector: "#time-heatmap",
+        domain: "year",
+        subDomain: "day",
+        data: "http://cal-heatmap.com/datas-years.json",
+        start: new Date(2000, 0),
+        cellSize: 10,
+        range: 1,
+        legend: [20, 40, 60, 80]
+    });
+</script>
+
+<h1> Speed </h1>
+<div id="speed-heatmap"></div>
+<script type="text/javascript">
+    var cal = new CalHeatMap();
+    cal.init({
+        itemSelector: "#speed-heatmap",
+        domain: "year",
+        subDomain: "day",
+        data: "http://cal-heatmap.com/datas-years.json",
+        start: new Date(2000, 0),
+        cellSize: 10,
+        range: 1,
+        legend: [20, 40, 60, 80]
+    });
+</script>
+
+<h1> Intensity </h1>
+<div id="intensity-heatmap"></div>
+<script type="text/javascript">
+    var cal = new CalHeatMap();
+    cal.init({
+        itemSelector: "#intensity-heatmap",
+        domain: "year",
+        subDomain: "day",
+        data: "http://cal-heatmap.com/datas-years.json",
+        start: new Date(2000, 0),
+        cellSize: 10,
+        range: 1,
+        legend: [20, 40, 60, 80]
+    });
+</script>
+
 </body>
 </html>
