@@ -25,6 +25,14 @@
         11, 12, 15, 20, 18, 17, 16, 18, 23, 25, 10, 15, 18,
         20, 18, 20, 22, 25, 18 ];
 
+    var parser = function(data) {
+        var i, total, results = {};
+        for (i = 0, total = data.length; i < total; i++) {
+            results[(Date.parse(data[i].date)/1000).toString()] = +data[i].value;
+        }
+        return results;
+    };
+
     d3.select("body").selectAll("div")
             .data(dataset)
             .enter()
@@ -45,8 +53,10 @@
         itemSelector: "#distance-heatmap",
         domain: "year",
         subDomain: "day",
-        data: "http://paulhendricks.io/running/data-years.json",
-        start: new Date(2000, 0),
+        data: "http://paulhendricks.io/running/speed.csv",
+        dataType: "csv",
+        afterLoadData: parser,
+        start: new Date(2015, 0),
         cellSize: 10,
         range: 1,
         legend: [20, 40, 60, 80]
@@ -61,8 +71,10 @@
         itemSelector: "#time-heatmap",
         domain: "year",
         subDomain: "day",
-        data: "http://paulhendricks.io/running/data-years.json",
-        start: new Date(2000, 0),
+        data: "http://paulhendricks.io/running/speed.csv",
+        dataType: "csv",
+        afterLoadData: parser,
+        start: new Date(2015, 0),
         cellSize: 10,
         range: 1,
         legend: [20, 40, 60, 80]
@@ -77,8 +89,10 @@
         itemSelector: "#speed-heatmap",
         domain: "year",
         subDomain: "day",
-        data: "http://paulhendricks.io/running/data-years.json",
-        start: new Date(2000, 0),
+        data: "http://paulhendricks.io/running/speed.csv",
+        dataType: "csv",
+        afterLoadData: parser,
+        start: new Date(2015, 0),
         cellSize: 10,
         range: 1,
         legend: [20, 40, 60, 80]
@@ -93,8 +107,10 @@
         itemSelector: "#intensity-heatmap",
         domain: "year",
         subDomain: "day",
-        data: "http://paulhendricks.io/running/data-years.json",
-        start: new Date(2000, 0),
+        data: "http://paulhendricks.io/running/speed.csv",
+        dataType: "csv",
+        afterLoadData: parser,
+        start: new Date(2015, 0),
         cellSize: 10,
         range: 1,
         legend: [20, 40, 60, 80]
