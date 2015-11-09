@@ -96,7 +96,7 @@
     var parseSpeed = function(data) {
         var i, total, results = {};
         for (i = 0, total = data.length; i < total; i++) {
-            results[(Date.parse(data[i].date)/1000).toString()] = +data[i].speed;
+            results[(Date.parse(data[i].date)/1000).toString()] = +data[i].distance / +data[i].time;
         }
         return results;
     };
@@ -122,7 +122,7 @@
     var parseIntensity = function(data) {
         var i, total, results = {};
         for (i = 0, total = data.length; i < total; i++) {
-            results[(Date.parse(data[i].date)/1000).toString()] = +data[i].intensity;
+            results[(Date.parse(data[i].date)/1000).toString()] = +data[i].distance / (+data[i].time / 60);
         }
         return results;
     };
